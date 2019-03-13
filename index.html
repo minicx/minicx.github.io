@@ -152,79 +152,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-jvm03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/10/jvm03/">jvm03</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/10/jvm03/" class="archive-article-date">
-  	<time datetime="2019-03-10T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JVM篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/10/jvm03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-jvm02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -232,20 +159,21 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/jvm02/">jvm02</a>
+      <a class="article-title" href="/2019/03/13/jvm02/">jvm02</a>
     </h1>
   
 
         
-        <a href="/2019/03/09/jvm02/" class="archive-article-date">
-  	<time datetime="2019-03-09T02:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+        <a href="/2019/03/13/jvm02/" class="archive-article-date">
+  	<time datetime="2019-03-13T04:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="常见OOM简介"><a href="#常见OOM简介" class="headerlink" title="常见OOM简介"></a>常见OOM简介</h2><p>Exception in thread “main” java.lang.OutOfMemoryError: Java heap space<br>    at sun.misc.FloatingDecimal$BinaryToASCIIBuffer.toJavaFormatString(FloatingDecimal.java:302)<br>    at sun.misc.FloatingDecimal.toJavaFormatString(FloatingDecimal.java:70)<br>    at java.lang.Double.toString(Double.java:204)<br>    at java.lang.String.valueOf(String.java:3141)<br>    at com.shitu.common.base.JvmTest.main(JvmTest.java:16)</p>
+
       
 
       
@@ -253,22 +181,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JVM篇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/09/jvm02/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/13/jvm02/">展开全文 >></a>
         </p>
       
 
@@ -305,20 +222,32 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/jvm01/">jvm01</a>
+      <a class="article-title" href="/2019/03/12/jvm01/">jvm01-JMM</a>
     </h1>
   
 
         
-        <a href="/2019/03/08/jvm01/" class="archive-article-date">
-  	<time datetime="2019-03-08T06:30:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
+        <a href="/2019/03/12/jvm01/" class="archive-article-date">
+  	<time datetime="2019-03-12T09:37:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="运行时数据区简介"><a href="#运行时数据区简介" class="headerlink" title="运行时数据区简介"></a>运行时数据区简介</h2><img src="/2019/03/12/jvm01/jvm-1.png" title="运行时数据区">
+<p>首先看一张老图<br>jvm在运行时会把管理的内存进行划分,注意这些划分是逻辑上的划分,物理上还是原来的整体.这些区域有各自不同的用途,有各自不同的生命周期.</p>
+<h3 id="1-程序计数器"><a href="#1-程序计数器" class="headerlink" title="1.程序计数器"></a>1.程序计数器</h3><p>线程私有,跟随这线程的生命周期.相当于当前线程执行字节码的指针,在cpu上运行时会跟着这个指引选取下一个指令.</p>
+<p>当线程在cpu上切换时,程序计数器会保存程序执行的位置.</p>
+<p>存在另外的情况,如果在执行的是native方法,计数器的值为空,</p>
+<h3 id="2-JAVA虚拟机栈"><a href="#2-JAVA虚拟机栈" class="headerlink" title="2.JAVA虚拟机栈"></a>2.JAVA虚拟机栈</h3><p>线程私有,跟随这线程的生命周期.每个方法被执行的时候会创建一个栈帧(Stack Frame)原来存储局部变量变,操作栈.动态链接,方法出口等信息.一个方法的执行就是一个栈帧在虚拟机栈中入栈到出栈的过程.</p>
+<p>虚拟机栈包含了局部变量表,局部变量表保存了基本数据类型,对象的指针等.</p>
+<p>如果栈的深度过深,比如无限制的回归,循环体中申明了变量,都可能抛出StackOverflowError异常.如果栈动态扩展的话就可能触发常见的oom异常.</p>
+<h3 id="3-本地方法栈"><a href="#3-本地方法栈" class="headerlink" title="3.本地方法栈"></a>3.本地方法栈</h3><p>本地方法栈是为native方法而生的,和java虚拟机栈的区别仅仅是语言上的区别.</p>
+<h3 id="4-Java堆"><a href="#4-Java堆" class="headerlink" title="4.Java堆"></a>4.Java堆</h3><p>堆是jvm中内存最大的一部分.线程共享,jvm启动的时候开辟,用来存储对象实例,绝大多数的对象都在堆上面分配内存.只有少部分特列会在栈上分配内存(通过逃逸分析确定).<br>注意堆其实是逻辑上的内存空间,不是物理上连续的.如果new一个对象的时候,堆上没有足够的内存,而且堆也无法扩展后,就会抛出oom.</p>
+<h3 id="5-方法区"><a href="#5-方法区" class="headerlink" title="5.方法区"></a>5.方法区</h3><p>方法区也是线程共享的内存空间.主要作用是加载类信息,常量,静态变量,即使编译出的代码.这个区域的垃圾回收行为很少,主要就是常量池和类的卸载.</p>
+<h3 id="6-直接内存"><a href="#6-直接内存" class="headerlink" title="6.直接内存"></a>6.直接内存</h3><p>在NIO中,channel和buffer可以通过native直接分配堆外内存,然后在java堆中存储该堆外的引用.如果java的-Xmx占用了绝大多数的服务器内存,那么分配堆外内存时可能会触发oom.</p>
+
       
 
       
@@ -331,7 +260,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JVM篇</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JVM</a>
         		</li>
       		
 		</ul>
@@ -341,7 +270,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/08/jvm01/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/12/jvm01/">展开全文 >></a>
         </p>
       
 
@@ -546,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JVM篇</a>
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
             
             <div class="clearfix"></div>
